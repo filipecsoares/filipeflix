@@ -40,7 +40,7 @@
         {
           "titulo": "Base para aprender os frameworks",
           "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
+        }
       ]
     },
     {
@@ -66,7 +66,7 @@
         {
           "titulo": "API: Dicionário do Programador",
           "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
-        }, 
+        },
         {
           "titulo": "Usando Git Direito",
           "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
@@ -178,6 +178,28 @@
         {
           "titulo": "Como aprender a programar?",
           "url": "https://www.youtube.com/watch?v=MwCx2qKdbDw&feature=youtu.be"
+        }
+      ]
+    },
+    {
+      "titulo": "Git",
+      "cor": "#3f485b",
+      "link_extra": {
+        "text": "Como utilizar o Git",
+        "url": "https://git-scm.com/"
+      },
+      "videos": [
+        {
+          "titulo": "Rebase interativo com Rodrigo Mango",
+          "url": "https://www.youtube.com/watch?v=0MVXlGQe9nU"
+        },
+        {
+          "titulo": "Git - Descubra o por quê e como Linus Torvalds criou o Git",
+          "url": "https://www.youtube.com/watch?v=4XpnKHJAok8&t=1503s"
+        },
+        {
+          "titulo": "Uma introdução ao Git Com Rodrigo Branas",
+          "url": "https://www.youtube.com/watch?v=C18qzn7j4SM"
         }
       ]
     }
