@@ -10,8 +10,8 @@ function App() {
     <div style={{ background: '#141414' }}>
       <Menu />
       <BannerMain
-        videoTitle={dataBase.categorias[6].videos[0].titulo}
-        url={dataBase.categorias[6].videos[0].url}
+        videoTitle={dataBase.categorias[2].videos[0].titulo}
+        url={dataBase.categorias[2].videos[0].url}
         videoDescription={'Git - Entenda o rebase interativo com Rodrigo Mango'}
       />
 
@@ -22,7 +22,6 @@ function App() {
       <Carousel category={dataBase.categorias[3]} />
       <Carousel category={dataBase.categorias[4]} />
       <Carousel category={dataBase.categorias[5]} />
-      <Carousel category={dataBase.categorias[6]} />
 
       <Footer />
     </div>
