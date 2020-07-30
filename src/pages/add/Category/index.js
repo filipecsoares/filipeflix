@@ -33,7 +33,9 @@ function AddCategory() {
   }
 
   useEffect(() => {
-    const URL = 'http://localhost:3333/categories';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:3333/categories'
+      : 'https://filipeflix.herokuapp.com/categories';
     fetch(URL).then(async (res) => {
       const data = await res.json();
       setCategories([...data]);
