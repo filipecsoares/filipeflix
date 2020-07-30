@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import Template from '../../../components/Template';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Template from '../../../components/Template';
+import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
+
+const Form = styled.form``;
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
@@ -18,9 +22,8 @@ function AddCategory() {
       [field]: value,
     });
   }
-  function handleChange(e) {
-    const { getAttribute, value } = e.target;
-    setValue(getAttribute('name'), value);
+  function handleChange({ target }) {
+    setValue(target.getAttribute('name'), target.value);
   }
 
   function handleSubmit(e) {
@@ -32,7 +35,7 @@ function AddCategory() {
   return (
     <Template>
       <h1>Cadastro de Categoria</h1>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <FormField
           label="Nome"
           name="name"
@@ -40,16 +43,6 @@ function AddCategory() {
           value={values.name}
           onChange={handleChange}
         />
-        {/* <div>
-          <label>
-            Descrição:
-            <textarea
-              name="description"
-              value={values.description}
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
         <FormField
           label="Descrição"
           name="description"
@@ -64,12 +57,10 @@ function AddCategory() {
           value={values.color}
           onChange={handleChange}
         />
-        <button>Cadastrar</button>
-      </form>
+        <Button>Cadastrar</Button>
+      </Form>
       <ul>
-        {categories.map((category, index) => {
-          return <li key={index}>{category.name}</li>;
-        })}
+        {categories.map((category) => <li key={category.name}>{category.name}</li>)}
       </ul>
       <Link to="/">Ir para Home</Link>
     </Template>
