@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import Template from '../../../components/Template';
 import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
-
-const Form = styled.form``;
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
@@ -15,6 +12,10 @@ function AddCategory() {
     color: '#000',
   };
   const [values, setValues] = useState(initialFormFields);
+
+  const URL = window.location.hostname.includes('localhost')
+    ? 'http://localhost:3333/categories'
+    : 'https://filipeflix.herokuapp.com/categories';
 
   function setValue(field, value) {
     setValues({
@@ -26,16 +27,29 @@ function AddCategory() {
     setValue(target.getAttribute('name'), target.value);
   }
 
-  function handleSubmit(e) {
+  async function saveCategory() {
+    try {
+      const res = await fetch(URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+      return res.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    await saveCategory();
     setCategories([...categories, values]);
     setValues(initialFormFields);
   }
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:3333/categories'
-      : 'https://filipeflix.herokuapp.com/categories';
     fetch(URL).then(async (res) => {
       const data = await res.json();
       setCategories([...data]);
@@ -45,7 +59,7 @@ function AddCategory() {
   return (
     <Template>
       <h1>Cadastro de Categoria</h1>
-      <Form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormField
           label="Nome"
           name="name"
@@ -68,14 +82,14 @@ function AddCategory() {
           onChange={handleChange}
         />
         <Button>Cadastrar</Button>
-      </Form>
+      </form>
       {categories.length === 0 && (
       <div>
         Loading...
       </div>
       )}
       <ul>
-        {categories.map((category) => <li key={category.name}>{category.name}</li>)}
+        {categories.map((category) => <li key={category.id}>{category.name}</li>)}
       </ul>
       <Link to="/">Ir para Home</Link>
     </Template>

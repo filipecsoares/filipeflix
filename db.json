@@ -5,6 +5,12 @@
       "name": "The best Guitarists ever",
       "description": "The best Guitarists ever",
       "color": "#555555"
+    },
+    {
+      "name": "Monise F. Gomes",
+      "description": "A great musician.",
+      "color": "#d73b3b",
+      "id": 2
     }
   ]
 }
