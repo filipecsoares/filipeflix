@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Template from '../../../components/Template';
@@ -32,6 +32,14 @@ function AddCategory() {
     setValues(initialFormFields);
   }
 
+  useEffect(() => {
+    const URL = 'http://localhost:3333/categories';
+    fetch(URL).then(async (res) => {
+      const data = await res.json();
+      setCategories([...data]);
+    });
+  }, []);
+
   return (
     <Template>
       <h1>Cadastro de Categoria</h1>
@@ -59,6 +67,11 @@ function AddCategory() {
         />
         <Button>Cadastrar</Button>
       </Form>
+      {categories.length === 0 && (
+      <div>
+        Loading...
+      </div>
+      )}
       <ul>
         {categories.map((category) => <li key={category.name}>{category.name}</li>)}
       </ul>
