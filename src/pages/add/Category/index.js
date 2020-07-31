@@ -3,29 +3,21 @@ import { Link } from 'react-router-dom';
 import Template from '../../../components/Template';
 import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
+import Loading from '../../../assets/img/Loading.gif';
+import useForm from '../../../hooks/useForm';
+import URL_BACKEND from '../../../config/index';
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
   const initialFormFields = {
-    name: '',
+    title: '',
     description: '',
     color: '#000',
   };
-  const [values, setValues] = useState(initialFormFields);
 
-  const URL = window.location.hostname.includes('localhost')
-    ? 'http://localhost:3333/categories'
-    : 'https://filipeflix.herokuapp.com/categories';
+  const { values, handleChange, clearForm } = useForm(initialFormFields);
 
-  function setValue(field, value) {
-    setValues({
-      ...values,
-      [field]: value,
-    });
-  }
-  function handleChange({ target }) {
-    setValue(target.getAttribute('name'), target.value);
-  }
+  const URL = `${URL_BACKEND}/categories`;
 
   async function saveCategory() {
     try {
@@ -46,7 +38,7 @@ function AddCategory() {
     e.preventDefault();
     await saveCategory();
     setCategories([...categories, values]);
-    setValues(initialFormFields);
+    clearForm(initialFormFields);
   }
 
   useEffect(() => {
@@ -61,10 +53,10 @@ function AddCategory() {
       <h1>Cadastro de Categoria</h1>
       <form onSubmit={handleSubmit}>
         <FormField
-          label="Nome"
-          name="name"
+          label="Título"
+          name="title"
           type="text"
-          value={values.name}
+          value={values.title}
           onChange={handleChange}
         />
         <FormField
@@ -85,11 +77,11 @@ function AddCategory() {
       </form>
       {categories.length === 0 && (
       <div>
-        Loading...
+        <img alt="loading" src={Loading} />
       </div>
       )}
       <ul>
-        {categories.map((category) => <li key={category.id}>{category.name}</li>)}
+        {categories.map((category) => <li key={category.id}>{category.title}</li>)}
       </ul>
       <Link to="/">Ir para Home</Link>
     </Template>

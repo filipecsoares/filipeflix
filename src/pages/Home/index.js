@@ -1,40 +1,44 @@
-import React from 'react';
-import styled from 'styled-components';
-import Menu from '../../components/Menu';
-import dataBase from '../../data/data-base.json';
+import React, { useEffect, useState } from 'react';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
-
-const AppWrapper = styled.div`
-  background: var(--grayDark);
-  padding-top: 94px;
-
-  @media (max-width: 800px) {
-    padding-top: 40px;
-  }
-`;
+import categoriesRepository from '../../repositories/categories';
+import Template from '../../components/Template';
 
 function Home() {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    categoriesRepository.getAllWithVideos()
+      .then((categoriesWithVideos) => {
+        setCategories(categoriesWithVideos);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
+  }, []);
+
   return (
-    <AppWrapper>
-      <Menu />
-      <BannerMain
-        videoTitle={dataBase.categorias[2].videos[0].titulo}
-        url={dataBase.categorias[2].videos[0].url}
-        videoDescription={'Git - Entenda o rebase interativo com Rodrigo Mango'}
-      />
+    <Template paddingAll={0}>
+      {categories.length === 0 && (<div>Loading...</div>)}
 
-      <Carousel ignoreFirstVideo category={dataBase.categorias[0]} />
-
-      <Carousel category={dataBase.categorias[1]} />
-      <Carousel category={dataBase.categorias[2]} />
-      <Carousel category={dataBase.categorias[3]} />
-      <Carousel category={dataBase.categorias[4]} />
-      <Carousel category={dataBase.categorias[5]} />
-
-      <Footer />
-    </AppWrapper>
+      {categories.map((category, index) => {
+        if (index === 0) {
+          return (
+            <div key={category.id}>
+              <BannerMain
+                videoTitle={category.videos[0].title}
+                url={category.videos[0].url}
+                videoDescription="Git - Entenda o rebase interativo com Rodrigo Mango"
+              />
+              <Carousel ignoreFirstVideo category={category} />
+            </div>
+          );
+        }
+        return (
+          <Carousel key={category.id} category={category} />
+        );
+      })}
+    </Template>
   );
 }
 
