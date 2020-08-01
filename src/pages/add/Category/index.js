@@ -5,7 +5,6 @@ import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
 import Loading from '../../../assets/img/Loading.gif';
 import useForm from '../../../hooks/useForm';
-import URL_BACKEND from '../../../config/index';
 import categoriesRepository from '../../../repositories/categories';
 
 function AddCategory() {
@@ -18,25 +17,9 @@ function AddCategory() {
 
   const { values, handleChange, clearForm } = useForm(initialFormFields);
 
-  async function saveCategory() {
-    const URL = `${URL_BACKEND}/categories`;
-    try {
-      const res = await fetch(URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-      return res.json();
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    await saveCategory();
+    categoriesRepository.create(values);
     setCategories([...categories, values]);
     clearForm(initialFormFields);
   }
