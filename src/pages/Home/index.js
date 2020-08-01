@@ -28,7 +28,7 @@ function Home() {
               <BannerMain
                 videoTitle={category.videos[0].title}
                 url={category.videos[0].url}
-                videoDescription="Git - Entenda o rebase interativo com Rodrigo Mango"
+                videoDescription={category.videos[0].description}
               />
               <Carousel ignoreFirstVideo category={category} />
             </div>

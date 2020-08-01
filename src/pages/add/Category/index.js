@@ -17,9 +17,8 @@ function AddCategory() {
 
   const { values, handleChange, clearForm } = useForm(initialFormFields);
 
-  const URL = `${URL_BACKEND}/categories`;
-
   async function saveCategory() {
+    const URL = `${URL_BACKEND}/categories`;
     try {
       const res = await fetch(URL, {
         method: 'POST',
@@ -42,6 +41,7 @@ function AddCategory() {
   }
 
   useEffect(() => {
+    const URL = `${URL_BACKEND}/categories`;
     fetch(URL).then(async (res) => {
       const data = await res.json();
       setCategories([...data]);

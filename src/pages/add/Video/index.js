@@ -14,6 +14,7 @@ function AddVideo() {
   const initialFormFields = {
     title: '',
     url: '',
+    description: '',
     categoryId: null,
   };
   const { values, handleChange, clearForm } = useForm(initialFormFields);
@@ -31,6 +32,7 @@ function AddVideo() {
     videosRepository.create({
       title: values.title,
       url: values.url,
+      description: values.description,
       categoryId: chosenCategory.id,
     })
       .then(() => {
@@ -48,6 +50,13 @@ function AddVideo() {
           name="title"
           type="text"
           value={values.title}
+          onChange={handleChange}
+        />
+        <FormField
+          label="Descrição"
+          name="description"
+          type="text"
+          value={values.description}
           onChange={handleChange}
         />
         <FormField

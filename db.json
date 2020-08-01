@@ -52,6 +52,7 @@
     {
       "id": 1,
       "categoryId": 1,
+      "description": "Teste descrição",
       "title": "SEO com React",
       "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
     },
@@ -198,6 +199,13 @@
       "url": "https://www.youtube.com/watch?v=CqLB-tBYB2Q",
       "categoryId": 1,
       "id": 25
+    },
+    {
+      "title": "Teste",
+      "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
+      "description": "Teste descrição",
+      "categoryId": 1,
+      "id": 26
     }
   ]
 }
