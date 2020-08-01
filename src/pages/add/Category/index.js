@@ -6,6 +6,7 @@ import FormField from '../../../components/FormField';
 import Loading from '../../../assets/img/Loading.gif';
 import useForm from '../../../hooks/useForm';
 import categoriesRepository from '../../../repositories/categories';
+import config from '../../../config';
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
@@ -19,6 +20,12 @@ function AddCategory() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (values.password !== config.PASSWORD) {
+      // eslint-disable-next-line no-alert
+      alert('Senha inválida!');
+      return;
+    }
+    delete values.password;
     categoriesRepository.create(values);
     setCategories([...categories, values]);
     clearForm(initialFormFields);
@@ -56,6 +63,13 @@ function AddCategory() {
           value={values.color}
           onChange={handleChange}
         />
+        <FormField
+          label="Senha"
+          name="password"
+          type="password"
+          value={values.password}
+          onChange={handleChange}
+        />
         <Button>Cadastrar</Button>
       </form>
       {categories.length === 0 && (
@@ -64,7 +78,7 @@ function AddCategory() {
       </div>
       )}
       <ul>
-        {categories.map((category) => <li key={category.id}>{category.title}</li>)}
+        {categories.map((category) => <li key={`category_${category.id}`}>{category.title}</li>)}
       </ul>
       <Link to="/">Ir para Home</Link>
     </Template>

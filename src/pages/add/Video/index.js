@@ -6,6 +6,7 @@ import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 import videosRepository from '../../../repositories/videos';
 import categoriesRepository from '../../../repositories/categories';
+import config from '../../../config';
 
 function AddVideo() {
   const history = useHistory();
@@ -16,6 +17,7 @@ function AddVideo() {
     url: '',
     description: '',
     categoryId: null,
+    password: '',
   };
   const { values, handleChange, clearForm } = useForm(initialFormFields);
 
@@ -27,6 +29,11 @@ function AddVideo() {
   }, []);
   async function handleSubmit(event) {
     event.preventDefault();
+    if (values.password !== config.PASSWORD) {
+      // eslint-disable-next-line no-alert
+      alert('Senha inválida!');
+      return;
+    }
     const chosenCategory = categories.find((category) => category.title === values.category);
 
     videosRepository.create({
@@ -73,6 +80,13 @@ function AddVideo() {
           value={values.category}
           onChange={handleChange}
           suggestions={categoryTitles}
+        />
+        <FormField
+          label="Senha"
+          name="password"
+          type="password"
+          value={values.password}
+          onChange={handleChange}
         />
         <Button>Cadastrar</Button>
       </form>

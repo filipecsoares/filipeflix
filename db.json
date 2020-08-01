@@ -173,6 +173,27 @@
       "categoryId": 5,
       "title": "Test Driven Development (TDD) | Crash Course | 2020",
       "url": "https://www.youtube.com/watch?v=z6gOPonp2t0"
+    },
+    {
+      "title": "Princípios SOLID em uma API REST com Node.js e TypeScript",
+      "url": "https://www.youtube.com/watch?v=vAV4Vy4jfkc",
+      "description": "Princípios SOLID em uma API REST com Node.js e TypeScript | Code/Drops #44",
+      "categoryId": 4,
+      "id": 25
+    },
+    {
+      "title": "AAAA",
+      "url": "https://www.youtube.com/watch?v=vAV4Vy4jfkc",
+      "description": "aaaaa",
+      "categoryId": 4,
+      "id": 26
+    },
+    {
+      "title": "https://www.youtube.com/watch?v=vAV4Vy4jfkc",
+      "url": "https://www.youtube.com/watch?v=vAV4Vy4jfkc",
+      "description": "https://www.youtube.com/watch?v=vAV4Vy4jfkc",
+      "categoryId": 4,
+      "id": 27
     }
   ]
 }
