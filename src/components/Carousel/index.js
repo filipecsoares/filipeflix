@@ -6,8 +6,8 @@ import Slider, { SliderItem } from './components/Slider';
 function Carousel({ ignoreFirstVideo, category }) {
   const categoryTitle = category.title;
   const categoryColor = category.color;
-  const categoryExtraLink = category.link_extra;
-  const videos = category.videos;
+  const categoryExtraLink = category.extra_link;
+  const { videos } = category;
   return (
     <VideoCardGroupContainer>
       {categoryTitle && (

@@ -34,8 +34,8 @@ function AddCategory() {
     }
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(event) {
+    event.preventDefault();
     await saveCategory();
     setCategories([...categories, values]);
     clearForm(initialFormFields);
