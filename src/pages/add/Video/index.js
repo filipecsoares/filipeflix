@@ -10,6 +10,7 @@ import categoriesRepository from '../../../repositories/categories';
 function AddVideo() {
   const history = useHistory();
   const [categories, setCategories] = useState([]);
+  const categoryTitles = categories.map(({ title }) => title);
   const initialFormFields = {
     title: '',
     url: '',
@@ -62,7 +63,7 @@ function AddVideo() {
           type="text"
           value={values.category}
           onChange={handleChange}
-          suggestions={['Front End', 'Back End']}
+          suggestions={categoryTitles}
         />
         <Button>Cadastrar</Button>
       </form>
