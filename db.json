@@ -2,12 +2,8 @@
   "categories": [
     {
       "id": 1,
-      "title": "Front End",
-      "color": "#6BD1FF",
-      "extra_link": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "title": "Clean Code",
+      "color": "#39B0DD"
     },
     {
       "id": 2,
@@ -29,68 +25,52 @@
     },
     {
       "id": 4,
-      "title": "Filmes",
+      "title": "SOLID",
       "color": "orange"
     },
     {
       "id": 5,
-      "title": "Games",
-      "color": "red",
-      "extra_link": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
-    },
-    {
-      "title": "kjl",
-      "description": "lkjl",
-      "color": "#000",
-      "id": 6
+      "title": "TDD",
+      "color": "red"
     }
   ],
   "videos": [
     {
       "id": 1,
       "categoryId": 1,
-      "description": "Teste descrição",
-      "title": "SEO com React",
-      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+      "description": "Clean Code - O que é Código limpo?",
+      "title": "O que é código limpo?",
+      "url": "https://www.youtube.com/watch?v=ZVtGbO_CnfA"
     },
     {
       "id": 2,
       "categoryId": 1,
-      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "title": "10 Tips For Clean Code",
+      "url": "https://www.youtube.com/watch?v=UjhX2sVf0eg"
     },
     {
       "id": 3,
       "categoryId": 1,
-      "title": "Componentização com VanillaJS #AluraMais",
-      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+      "title": "Clean Code - Rodrigo Branas",
+      "url": "https://www.youtube.com/watch?v=tlqpNTFa_YQ"
     },
     {
       "id": 4,
       "categoryId": 1,
-      "title": "Pare de chutar e aprenda a display: inline #01",
-      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+      "title": "Clean Architecture com TypeScript (desenvolvimento Web)",
+      "url": "https://www.youtube.com/watch?v=fiw29YzBMGA"
     },
     {
       "id": 5,
       "categoryId": 1,
-      "title": "Template String: Interpolando strings com JavaScript #AluraMais",
-      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+      "title": "Clean Code - Uncle Bob ",
+      "url": "https://www.youtube.com/watch?v=l-gF0vDhJVI"
     },
     {
       "id": 6,
       "categoryId": 1,
-      "title": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
-    },
-    {
-      "id": 7,
-      "categoryId": 1,
-      "title": "Novidades do Angular v9",
-      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+      "title": "Série Clean Code Hard Mode #Aula_01",
+      "url": "https://www.youtube.com/watch?v=4fvFqxEjTsQ"
     },
     {
       "id": 8,
@@ -149,63 +129,50 @@
     {
       "id": 17,
       "categoryId": 4,
-      "title": "Interestellar",
-      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+      "title": "Uncle Bob SOLID principles",
+      "url": "https://www.youtube.com/watch?v=zHiWqnTWsn4"
     },
     {
       "id": 18,
       "categoryId": 4,
-      "title": "Gattaca",
-      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+      "title": "SOLID com TypeScript // Live #37",
+      "url": "https://www.youtube.com/watch?v=899Qa6sQcRc"
     },
     {
       "id": 19,
       "categoryId": 4,
-      "title": "A Chegada",
-      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+      "title": "The Five SOLID Principles of Object-Oriented Design",
+      "url": "https://www.youtube.com/watch?v=HyQlCMU_Ylw"
     },
     {
       "id": 20,
       "categoryId": 4,
-      "title": "Feitiço do Tempo",
-      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+      "title": "S.O.L.I.D. Principles of Object-Oriented Design - A Tutorial on Object-Oriented Design",
+      "url": "https://www.youtube.com/watch?v=GtZtQ2VFweA"
     },
     {
       "id": 21,
       "categoryId": 5,
-      "title": "Final Fantasy 7",
-      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+      "title": "Testes no NodeJS aplicando TDD com Jest | Diego Fernandes",
+      "url": "https://www.youtube.com/watch?v=2G_mWfG0DZE"
     },
     {
       "id": 22,
       "categoryId": 5,
-      "title": "Assassins Creed Valhalla",
-      "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+      "title": "DevTernity 2018: Sandro Mancuso - Does TDD Really Lead to Good Design?",
+      "url": "https://www.youtube.com/watch?v=KyFVA4Spcgg&t=1165s"
     },
     {
       "id": 23,
       "categoryId": 5,
-      "title": "God of War 4",
-      "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+      "title": "Alura: Curso de Testes: TDD com Java - Aula 1",
+      "url": "https://www.youtube.com/watch?v=Dyls2ljtAZQ"
     },
     {
       "id": 24,
       "categoryId": 5,
-      "title": "Resident Evil 8",
-      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
-    },
-    {
-      "title": "Kubernetes e Minikube",
-      "url": "https://www.youtube.com/watch?v=CqLB-tBYB2Q",
-      "categoryId": 1,
-      "id": 25
-    },
-    {
-      "title": "Teste",
-      "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
-      "description": "Teste descrição",
-      "categoryId": 1,
-      "id": 26
+      "title": "Test Driven Development (TDD) | Crash Course | 2020",
+      "url": "https://www.youtube.com/watch?v=z6gOPonp2t0"
     }
   ]
 }

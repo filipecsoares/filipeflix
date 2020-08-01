@@ -62,7 +62,7 @@ function AddVideo() {
         <FormField
           label="URL"
           name="url"
-          type="text"
+          type="url"
           value={values.url}
           onChange={handleChange}
         />
