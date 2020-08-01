@@ -6,6 +6,7 @@ import FormField from '../../../components/FormField';
 import Loading from '../../../assets/img/Loading.gif';
 import useForm from '../../../hooks/useForm';
 import URL_BACKEND from '../../../config/index';
+import categoriesRepository from '../../../repositories/categories';
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
@@ -41,11 +42,10 @@ function AddCategory() {
   }
 
   useEffect(() => {
-    const URL = `${URL_BACKEND}/categories`;
-    fetch(URL).then(async (res) => {
-      const data = await res.json();
-      setCategories([...data]);
-    });
+    categoriesRepository.getAll()
+      .then((data) => {
+        setCategories(data);
+      });
   }, []);
 
   return (
