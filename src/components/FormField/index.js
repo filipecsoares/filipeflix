@@ -92,7 +92,7 @@ const FormField = ({
         <datalist id={`suggestionFor_${fieldId}`}>
           {
             suggestions.map((suggestion) => (
-              <option value={suggestion}>
+              <option value={suggestion} key={`suggestionFor_${fieldId}_option_${suggestion}`}>
                 {suggestion}
               </option>
             ))
